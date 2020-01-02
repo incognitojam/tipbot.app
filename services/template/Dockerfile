@@ -6,11 +6,6 @@ RUN npm ci --only production
 COPY . .
 LABEL stage=build
 
-# Test Stage
-# FROM build AS test
-# RUN npm run test
-# LABEL stage=test
-
 # Production Stage
 FROM node:lts-alpine
 EXPOSE 3000
