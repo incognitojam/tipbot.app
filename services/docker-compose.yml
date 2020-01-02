@@ -1,0 +1,6 @@
+version: "3.7"
+services:
+  template:
+    build: ./template
+    container_name: template
+    image: tipbot/template
