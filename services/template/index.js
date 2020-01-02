@@ -6,7 +6,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.listen(port, () => {
-  console.log(`Template service listening on port ${port}`);
+  console.log(`Service listening on port ${port}`);
 });
 
 // Listen for the SIGINT event (CTRL+C pressed) and exit the process if received
