@@ -1,0 +1,13 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "A template for creating new REST API services.",
+  "main": "service.js",
+  "scripts": {
+    "test": "echo \"Warning: no test specified\""
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
