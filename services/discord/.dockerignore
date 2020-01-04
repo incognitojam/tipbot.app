@@ -1,0 +1,9 @@
+node_modules
+*.log
+.git
+.idea
+.atom
+.vscode
+*.iml
+.settings
+*.swp
