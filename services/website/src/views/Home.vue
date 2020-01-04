@@ -9,8 +9,7 @@
             <v-card-text>
               <p class="body-1">
                 A cross-platform cryptocurrency tipping service with
-                integrations for different chat platforms and streaming
-                services.
+                integrations for different chat platforms and streaming sites.
               </p>
             </v-card-text>
 
