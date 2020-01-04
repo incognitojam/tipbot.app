@@ -1,18 +1,14 @@
-# Build Stage
-FROM tipbot/node-template AS build
+ARG TAG=latest
 
-WORKDIR ${ROOT_DIR}/services/coin
+FROM tipbot/node-template:${TAG}
+
+ENV TIPBOT_SERVICE coin
+
+WORKDIR ${ROOT_DIR}/services/${TIPBOT_SERVICE}
 
 COPY package*.json ./
 RUN npm ci
 COPY . .
-
-# Production Stage
-FROM node:lts-alpine
-
-ENV ROOT_DIR /tipbot
-COPY --from=build ${ROOT_DIR} ${ROOT_DIR}
-WORKDIR ${ROOT_DIR}/services/coin
 
 USER node
 EXPOSE 3000

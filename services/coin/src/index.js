@@ -1,4 +1,4 @@
-const app = require("node-template");
+const { app } = require("node-template");
 
 const coins = [
   {
