@@ -1,4 +1,4 @@
-const app = require("./index");
+const app = require("node-template");
 
 const coins = [
   {
@@ -27,11 +27,11 @@ const coins = [
   }
 ];
 
-app.get("/coins", (req, res) => {
+app.get("/", (req, res) => {
   res.send(coins);
 });
 
-app.get("/coins/:id", (req, res) => {
+app.get("/:id", (req, res) => {
   const id = req.params.id;
   const coin = coins.find(value => value.id === id);
 

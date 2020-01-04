@@ -1,15 +1,19 @@
 # Build Stage
-FROM node:lts-alpine AS build
-WORKDIR /service
+FROM tipbot/node-template AS build
+
+WORKDIR ${ROOT_DIR}/services/coin
+
 COPY package*.json ./
-RUN npm ci --only production
+RUN npm ci
 COPY . .
-LABEL stage=build
 
 # Production Stage
 FROM node:lts-alpine
-EXPOSE 3000
-WORKDIR /service
-COPY --from=build /service /service
+
+ENV ROOT_DIR /tipbot
+COPY --from=build ${ROOT_DIR} ${ROOT_DIR}
+WORKDIR ${ROOT_DIR}/services/coin
+
 USER node
-CMD ["node", "service.js"]
+EXPOSE 3000
+CMD ["node", "src/index.js"]

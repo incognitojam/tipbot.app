@@ -2,12 +2,11 @@
   "name": "coin",
   "version": "0.0.1",
   "description": "A service for retrieving information about cryptocurrencies on the Tipbot platform.",
-  "main": "service.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Warning: no test specified\""
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "node-template": "file:../../bases/node-template"
   }
 }
