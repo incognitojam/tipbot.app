@@ -1,15 +1,15 @@
-# Build Stage
-FROM node:lts-alpine AS build
-WORKDIR /service
-COPY package*.json ./
-RUN npm ci --only production
-COPY . .
-LABEL stage=build
+ARG TAG=latest
 
-# Production Stage
-FROM node:lts-alpine
-EXPOSE 3000
-WORKDIR /service
-COPY --from=build /service /service
+FROM tipbot/node-template:${TAG}
+
+ENV TIPBOT_SERVICE discord
+
+WORKDIR ${ROOT_DIR}/services/${TIPBOT_SERVICE}
+
+COPY package*.json ./
+RUN npm ci
+COPY . .
+
 USER node
-CMD ["node", "index.js"]
+EXPOSE 3000
+CMD ["node", "src/index.js"]

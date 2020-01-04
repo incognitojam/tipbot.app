@@ -23,4 +23,4 @@ ${IMAGE_DIRS}:
 
 # Specify dependencies between images
 services/coin: bases/node-template
-services/discord: bases/discord-template
+services/discord: bases/node-template
