@@ -5,11 +5,15 @@ services:
     image: tipbot/coin
     networks:
       - tipbot
+    labels:
+      - traefik.frontend.headers.customResponseHeaders=Access-Control-Allow-Origin:*
 
   discord:
     image: tipbot/discord
     networks:
       - tipbot
+    labels:
+      - traefik.frontend.headers.customResponseHeaders=Access-Control-Allow-Origin:*
 
   website:
     image: tipbot/website
