@@ -5,10 +5,13 @@ COPY package*.json ./
 RUN npm ci
 COPY . .
 RUN npm run build
-LABEL stage=build
 
 # Production Stage
 FROM nginx:stable-alpine
-COPY --from=build /service/dist /usr/share/nginx/html
+
 EXPOSE 80
+LABEL traefik.backend=website traefik.port=80 traefik.default.protocol=http traefik.frontend.rule=Host:localhost,tipbot.app
+
+COPY --from=build /service/dist /usr/share/nginx/html
+
 CMD ["nginx", "-g", "daemon off;"]
