@@ -13,21 +13,22 @@ defaultEntryPoints = ["http"]
   #   [entryPoints.http.redirect]
   #   entryPoint = "https"
   # [entryPoints.https]
-  #   address = ":443"
-  #   [entryPoints.https.tls]
+  # address = ":443"
+  # [entryPoints.https.tls]
 
 [retry]
 
 [docker]
 endpoint = "unix:///var/run/docker.sock"
-# Set to tipbot.app, or other domain
-domain = "localhost"
+domain = "tipbot.app"
 watch = true
-exposedbydefault = false
+exposedByDefault = false
 
 # Uncomment and configure to enable Let's Encrypt SSL certificate
 # [acme]
 # email = "admin@example.com"
 # storage = "acme.json"
 # entryPoint = "https"
-# OnHostRule = true
+# onHostRule = true
+# [acme.httpChallenge]
+# entryPoint = "http"
