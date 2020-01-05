@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  coin:
+    image: tipbot/coin
+    networks:
+      - tipbot
+
+  discord:
+    image: tipbot/discord
+    networks:
+      - tipbot
+
+  website:
+    image: tipbot/website
+    networks:
+      - tipbot
+
+networks:
+  tipbot:
+    external: true

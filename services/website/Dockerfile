@@ -8,10 +8,12 @@ RUN npm run build
 
 # Production Stage
 FROM nginx:stable-alpine
-
 EXPOSE 80
-LABEL traefik.backend=website traefik.port=80 traefik.default.protocol=http traefik.frontend.rule=Host:localhost,tipbot.app
-
+LABEL traefik.enable=true \
+    traefik.backend=website \
+    traefik.port=80 \
+    traefik.default.protocol=http \
+    traefik.frontend.rule=Host:localhost,tipbot.app \
+    traefik.docker.network=tipbot
 COPY --from=build /service/dist /usr/share/nginx/html
-
 CMD ["nginx", "-g", "daemon off;"]

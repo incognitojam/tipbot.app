@@ -1,0 +1,33 @@
+debug = true
+checkNewVersion = false
+logLevel = "ERROR"
+defaultEntryPoints = ["http"]
+
+# Replace line above to enable HTTPS
+# defaultEntryPoints = ["http", "https"]
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+  # Uncomment to enable HTTPS
+  #   [entryPoints.http.redirect]
+  #   entryPoint = "https"
+  # [entryPoints.https]
+  #   address = ":443"
+  #   [entryPoints.https.tls]
+
+[retry]
+
+[docker]
+endpoint = "unix:///var/run/docker.sock"
+# Set to tipbot.app, or other domain
+domain = "localhost"
+watch = true
+exposedbydefault = false
+
+# Uncomment and configure to enable Let's Encrypt SSL certificate
+# [acme]
+# email = "admin@example.com"
+# storage = "acme.json"
+# entryPoint = "https"
+# OnHostRule = true

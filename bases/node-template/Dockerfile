@@ -13,4 +13,7 @@ RUN npm ci
 COPY . .
 
 EXPOSE 3000
-LABEL traefik.port=3000 traefik.default.protocol=http
+LABEL traefik.enable=true \
+    traefik.port=3000 \
+    traefik.default.protocol=http \
+    traefik.docker.network=tipbot
