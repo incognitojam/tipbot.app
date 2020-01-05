@@ -4,7 +4,7 @@
       <v-row align="center" justify="center">
         <v-col cols="12" sm="8" md="4">
           <v-card class="elevation-4">
-            <h1 class="pt-4 px-4 text-center">Welcome to Tipbot.app</h1>
+            <h1 class="pt-4 px-4 text-center">Welcome to tipbot.app</h1>
 
             <v-card-text>
               <p class="body-1">

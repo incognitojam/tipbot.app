@@ -1,4 +1,4 @@
-# Tipbot.app
+# tipbot.app
 A cross-platform cryptocurrency tipping service with integrations for different chat platforms and streaming sites.
 
 Websites coming soon™ |⠀
