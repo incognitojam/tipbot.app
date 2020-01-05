@@ -16,7 +16,24 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn href="https://github.com/IncognitoJam/tipbot.app" target="_blank" text>
+      <status-chip
+        name="Discord Bot"
+        color="#7289da"
+        icon="mdi-discord"
+        endpoint="discord/status"
+      />
+      <status-chip
+        name="Coin Service"
+        color="info"
+        icon="mdi-coin-outline"
+        endpoint="coin/status"
+      />
+
+      <v-btn
+        href="https://github.com/IncognitoJam/tipbot.app"
+        target="_blank"
+        text
+      >
         <span class="mr-2">GitHub</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
@@ -29,7 +46,10 @@
 </template>
 
 <script>
+import StatusChip from "./components/StatusChip";
+
 export default {
-  name: "app"
+  name: "app",
+  components: { StatusChip }
 };
 </script>
