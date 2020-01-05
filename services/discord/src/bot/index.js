@@ -48,7 +48,27 @@ client.login(process.env.DISCORD_CLIENT_TOKEN);
 service.get("/status", (req, res) => {
   // Send the discord client status and the user tag in the response.
   res.send({
-    status: client.status,
-    tag: client.user ? client.user.tag : null
+    status: parseStatus(client.status),
+    tag: client.user ? client.user.tag : null,
+    apiLatency: Math.round(client.ping)
   });
 });
+
+const parseStatus = clientStatus => {
+  switch (clientStatus) {
+    case 0:
+      return "Ready";
+    case 1:
+      return "Connecting";
+    case 2:
+      return "Reconnecting";
+    case 3:
+      return "Idle";
+    case 4:
+      return "Nearly";
+    case 5:
+      return "Disconnected";
+    default:
+      return "Unknown";
+  }
+};
