@@ -16,4 +16,5 @@ EXPOSE 3000
 LABEL traefik.enable=true \
     traefik.port=3000 \
     traefik.default.protocol=http \
-    traefik.docker.network=tipbot
+    traefik.docker.network=tipbot \
+    com.centurylinklabs.watchtower.enable=true

@@ -20,6 +20,13 @@ services:
     networks:
       - tipbot
 
+  # https://containrrr.github.io/watchtower/
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 15 --label-enable --no-pull
+
 networks:
   tipbot:
     external: true
