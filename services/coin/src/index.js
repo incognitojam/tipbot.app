@@ -27,6 +27,12 @@ const coins = [
   }
 ];
 
+app.get("/status", (req, res) => {
+  res.send({
+    status: "Online"
+  });
+});
+
 app.get("/", (req, res) => {
   res.send(coins);
 });
