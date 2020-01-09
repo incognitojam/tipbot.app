@@ -1,14 +1,14 @@
 {
   "name": "discord",
   "version": "0.0.1",
-  "description": "Discord integration for Tipbot.app",
+  "description": "Discord integration for tipbot.app",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Warning: no test specified\""
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
     "discord.js": "^11.5.1",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "node-template": "file:../../bases/node-template"
   }
 }
