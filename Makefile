@@ -1,4 +1,4 @@
-PROJECT_NAME = tipbot
+PROJECT_NAME = tipbotapp
 
 GIT_SHA1 = $(shell git rev-parse --verify HEAD)
 GIT_TAG = ${shell git describe --exact-match 2> /dev/null || echo 'latest'}

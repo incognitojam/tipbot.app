@@ -1,6 +1,5 @@
 **TODO:** write comprehensive instructions
 
-- [ ] `docker network create tipbot`
-- [ ] configure/start traefik
-- [ ] `chmod 600 acme.json`
-- [ ] configure/start services
+- [ ] `docker network create tipbotapp`
+- [ ] `chmod 600 traefik/acme.json`
+- [ ] `docker-compose up -d`

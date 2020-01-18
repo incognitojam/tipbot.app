@@ -2,23 +2,23 @@ version: "3.7"
 
 services:
   coin:
-    image: tipbot/coin
+    image: tipbotapp/coin
     networks:
-      - tipbot
+      - tipbotapp
     labels:
       - traefik.frontend.headers.customResponseHeaders=Access-Control-Allow-Origin:*
 
   discord:
-    image: tipbot/discord
+    image: tipbotapp/discord
     networks:
-      - tipbot
+      - tipbotapp
     labels:
       - traefik.frontend.headers.customResponseHeaders=Access-Control-Allow-Origin:*
 
   website:
-    image: tipbot/website
+    image: tipbotapp/website
     networks:
-      - tipbot
+      - tipbotapp
 
   # https://containrrr.github.io/watchtower/
   watchtower:
@@ -36,7 +36,7 @@ services:
       - 80:80
       - 443:443
     networks:
-      - tipbot
+      - tipbotapp
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik/traefik.toml:/traefik.toml
@@ -44,5 +44,5 @@ services:
     container_name: traefik
 
 networks:
-  tipbot:
+  tipbotapp:
     external: true
