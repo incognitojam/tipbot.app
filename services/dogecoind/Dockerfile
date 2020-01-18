@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 RUN apt-get update && \
-    apt-get install -y \
+    apt-get install -y --no-install-recommends \
     wget gettext-base
 
 ENV VERSION=1.14.2
@@ -45,7 +45,7 @@ ARG PAYTXFEE
 ARG WALLETNOTIFY
 ARG BLOCKNOTIFY
 
-RUN cat .dogecoin/dogecoin.template.conf | envsubst > .dogecoin/dogecoin2.conf
+RUN cat .dogecoin/dogecoin.template.conf | envsubst > .dogecoin/dogecoin.conf
 
 EXPOSE 22556
 CMD ["/bin/bash"]
