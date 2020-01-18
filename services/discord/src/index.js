@@ -1,3 +1,6 @@
+// Load config from .env file
+require("dotenv").config();
+
 const Discord = require("discord.js");
 const { app } = require("node-template");
 const { Command, CommandManager } = require("./command");
