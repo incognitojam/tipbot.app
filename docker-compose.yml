@@ -26,6 +26,22 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: --interval 15 --label-enable --no-pull
+    container_name: watchtower
+
+  # https://docs.traefik.io/
+  traefik:
+    image: traefik:1.7
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - tipbot
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik/traefik.toml:/traefik.toml
+      - ./traefik/acme.json:/acme.json
+    container_name: traefik
 
 networks:
   tipbot:
