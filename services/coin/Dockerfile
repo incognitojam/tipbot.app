@@ -1,5 +1,5 @@
 ARG TAG=latest
-FROM tipbot/node-template:${TAG}
+FROM tipbotapp/node-template:${TAG}
 
 ENV TIPBOT_SERVICE=coin
 WORKDIR ${ROOT_DIR}/services/${TIPBOT_SERVICE}

@@ -15,6 +15,9 @@ services:
     labels:
       - traefik.frontend.headers.customResponseHeaders=Access-Control-Allow-Origin:*
 
+  dogecoind:
+    image: tipbotapp/dogecoind
+
   website:
     image: tipbotapp/website
     networks:
